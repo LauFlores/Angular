@@ -1,0 +1,17 @@
+<main>
+  <app-toolbar [drawer]="drawer"></app-toolbar>
+<!-- --------- Side Nav --------- -->
+  <mat-drawer-container class="example-container">
+
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <app-navbar></app-navbar>
+    </mat-drawer>
+
+    <!-- --------- Main Content --------- -->
+    <div class="main-content">
+      <app-lista-alumnos></app-lista-alumnos>
+    </div>
+
+  </mat-drawer-container>
+
+</main>

@@ -1,0 +1,47 @@
+/*
+@use '@angular/material' as mat;
+
+@include mat.core();
+*/
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-primary {
+  color: #00BCD4;
+}
+
+.mat-primary-bg {
+  background-color: #00BCD4;
+}
+
+.mat-accent {
+  color: #FF9800;
+}
+
+.mat-accent-bg {
+  background-color: #FF9800;
+}
+
+.mat-primary-bg {
+  color: #004F4E;
+}
+
+.mat-primary-bg-bg {
+  background-color: #004F4E;
+}
+
+.mat-accent-bg {
+  color: #E65100;
+}
+
+.mat-accent-bg-bg {
+  background-color: #E65100;
+}
+
+/*# sourceMappingURL=styles.css.map */

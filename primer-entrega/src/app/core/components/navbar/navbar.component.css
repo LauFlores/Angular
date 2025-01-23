@@ -1,0 +1,12 @@
+mat-icon {
+  margin: auto 10px auto auto;
+  align-self: center;
+}
+
+a {
+  font-size: 1.5rem;
+}
+
+.focus {
+  background-color: #004F4E;
+}

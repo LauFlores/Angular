@@ -1,0 +1,22 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.mat-toolbar, button, div {
+  background-color: #004F4E;
+  color: #00BCD4;
+}
+
+span {
+  span {
+    color: #FF9800;
+    font-weight: bold;
+  }
+}

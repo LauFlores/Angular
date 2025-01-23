@@ -1,0 +1,29 @@
+/*
+@use '@angular/material' as mat;
+
+@include mat.core();
+*/
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$cyan-dark: #004F4E;
+$cyan: #00BCD4;
+$orange: #FF9800;
+$orange-dark: #E65100;
+
+@mixin theme($color-name, $color) {
+  .mat-#{$color-name} {
+    color: $color;
+  }
+  .mat-#{$color-name}-bg {
+    background-color: $color;
+  }
+}
+
+@include theme(primary, $cyan);
+@include theme(accent, $orange);
+@include theme(primary-bg, $cyan-dark);
+@include theme(accent-bg, $orange-dark);
+
+
