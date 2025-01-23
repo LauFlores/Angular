@@ -1,4 +1,3 @@
-# primer-entrega
 
 # Primera Entrega
 
