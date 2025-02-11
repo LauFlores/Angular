@@ -1,0 +1,50 @@
+<section class="course-info-container">
+  @if (isLoading) {
+    <div class="loading-spinner">
+      <mat-spinner diameter="50"></mat-spinner>
+    </div>
+  } @else {
+    <mat-card class="course-card">
+      <mat-card-header>
+        <div mat-card-avatar class="course-avatar">
+          {{ course.name.charAt(0) }}{{ course.name.charAt(1) }}
+        </div>
+        <div>
+          <mat-card-title>{{ course.name }}</mat-card-title>
+          <mat-card-subtitle>
+            <mat-chip-listbox>
+              <!-- No andan los colores. -->
+              <mat-chip [ngClass]="course.isActive ? 'green-chip' : 'red-chip'">
+                {{ course.isActive ? 'Activo' : 'Inactivo' }}
+              </mat-chip>
+            </mat-chip-listbox>
+          </mat-card-subtitle>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListItemIcon>person</mat-icon>
+            <span matListItemTitle>Nombre</span>
+            <span matListItemLine>{{ course.name }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListItemIcon>event</mat-icon>
+            <span matListItemTitle>Descripcion</span>
+            <span matListItemLine>{{ course.description }}</span>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+          Volver al listado
+        </button>
+        <button mat-raised-button color="primary" (click)="goToClasses()">
+          <mat-icon>arrow_forward</mat-icon>
+          Ver las Clases
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  }
+</section>

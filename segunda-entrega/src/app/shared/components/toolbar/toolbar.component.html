@@ -1,0 +1,26 @@
+<mat-toolbar >
+  <div>
+    <button mat-icon-button class="example-icon" aria-label="Menu icon" (click)="drawer.toggle()">
+      @if (drawer.opened) {
+        <mat-icon>close</mat-icon>
+      }
+      @else {
+        <mat-icon>menu</mat-icon>
+      }
+
+    </button>
+    <span class="mat-title-large"><span>DevHub</span> Learning</span>
+  </div>
+  <span class="example-spacer"></span>
+  <div>
+    <button mat-icon-button matBadge="4" class="notifications-icon" aria-label="Notifications">
+      <mat-icon>notifications</mat-icon>
+    </button>
+    <button mat-button [matMenuTriggerFor]="userMenu">Nombre</button>
+    <mat-menu #userMenu="matMenu" xPosition="before">
+      <button mat-menu-item><mat-icon>account_circle</mat-icon>Perfil</button>
+      <button mat-menu-item><mat-icon>settings</mat-icon>Configuración</button>
+      <button mat-menu-item><mat-icon>logout</mat-icon>Cerrar sesión</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,90 @@
+<section class="student-info-container">
+  @if (isLoading) {
+    <div class="loading-spinner">
+      <mat-spinner diameter="50"></mat-spinner>
+    </div>
+  } @else {
+    @if (student) {
+      <mat-card class="student-card">
+        <mat-card-header>
+          <div mat-card-avatar class="student-avatar">
+            {{ student.firstName.charAt(0) }}{{ student.lastName.charAt(0) }}
+          </div>
+          <div>
+            <mat-card-title>{{ student | fullName }}</mat-card-title>
+            <mat-card-subtitle>
+              <mat-chip-listbox>
+                <mat-chip [color]="student.isActive ? 'green' : 'red'">
+                  {{ student.isActive ? 'Activo' : 'Inactivo' }}
+                </mat-chip>
+              </mat-chip-listbox>
+            </mat-card-subtitle>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon matListItemIcon>person</mat-icon>
+              <span matListItemTitle>Nombre</span>
+              <span matListItemLine>{{ student.firstName }} {{ student.lastName }}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListItemIcon>email</mat-icon>
+              <span matListItemTitle>Email</span>
+              <span matListItemLine>{{ student.email }}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListItemIcon>event</mat-icon>
+              <span matListItemTitle>Fecha Registro</span>
+              <span matListItemLine>{{ student.createdAt | date:'medium' }}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon matListItemIcon>update</mat-icon>
+              <span matListItemTitle>Última Actualización</span>
+              <span matListItemLine>{{ student.updatedAt | date:'medium' }}</span>
+            </mat-list-item>
+          </mat-list>
+          <div>
+            <h3>Cursos Inscritos</h3>
+            @if(enrollments && enrollments.length > 0) {
+              <mat-list>
+                @for(enrollment of enrollments; track enrollment) {
+                  <mat-list-item>
+                    <span>{{enrollment.courseName}}</span> - <span>{{ enrollment.enrollmentDate | date:'mediumDate' }}</span>
+                  </mat-list-item>
+                }
+              </mat-list>
+            } @else {
+              <p>El estudiante no está inscrito en ningún curso.</p>
+            }
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-raised-button color="primary" (click)="goBack()">
+            <mat-icon>arrow_back</mat-icon>
+            Volver al listado
+          </button>
+          <button mat-raised-button color="primary" (click)="openEnrollmentForm()">
+            <mat-icon>add</mat-icon>
+            Inscribir
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    } @else {
+      <mat-card class="not-found-card">
+        <mat-card-header>
+          <mat-card-title>Estudiante no encontrado</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Lo sentimos, no se pudo encontrar la información del estudiante.</p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-raised-button color="primary" (click)="goBack()">
+            <mat-icon>arrow_back</mat-icon>
+            Volver al listado
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  }
+</section>

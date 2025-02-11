@@ -1,0 +1,79 @@
+.student-info-container,
+.course-info-container,
+.class-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+//.loading-spinner {   --> Crear un componente spinner
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//  height: 200px;
+//}
+
+.student-card,
+.not-found-card,
+.course-card,
+.class-card {
+  max-width: 900px;
+  width: 100%;
+}
+
+.student-avatar,
+.course-avatar,
+.class-avatar {
+  width: 100px;
+  height: 100px;
+  background-color: #09f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: lighter;
+  margin: 16px;
+}
+
+mat-card-content {
+  margin-top: 20px;
+}
+
+mat-list-item {
+  height: auto !important;
+  margin-bottom: 16px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 16px;
+}
+
+mat-card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-card {
+  background-color: #e5e5e522;
+}
+.mdc-evolution-chip-set__chips {
+  display: flex;
+  justify-content: center;
+}
+
+
+.green-chip {
+  color: #0de50d;
+}
+
+.red-chip {
+  color: #de1212;
+}

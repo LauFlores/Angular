@@ -1,0 +1,34 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  display: block;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.cancel {
+  color: #c91212;
+  background-color: #c9121220;
+}
+
+.save {
+  color: #007a5a;
+  background-color: #007a5a20;
+}
+
+div {
+  background-color: #181e1e;
+}
+
+h1 {
+  background-color: #004F4E;
+  color: #00BCD4; /* Por que no funciona? */
+}

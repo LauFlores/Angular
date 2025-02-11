@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>{{ data ? data.title : 'Nuevo Curso' }}</h1>
+<div class="main" mat-dialog-content>
+  <form [formGroup]="classForm">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="title" />
+      @if (classForm.get('title')?.invalid) {
+        <mat-error>Nombre es requerido</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descripcion</mat-label>
+      <textarea rows="5" matInput formControlName="description"></textarea>
+      @if (classForm.get('description')?.invalid) {
+        <mat-error>Descripcion es requerido</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Curso</mat-label>
+      <mat-select formControlName="course">
+        <mat-option *ngFor="let course of courses" [value]="course.id">
+          {{ course.name }}
+        </mat-option>
+      </mat-select>
+      @if (classForm.get('course')?.invalid) {
+        <mat-error>Curso es requerido</mat-error>
+      }
+    </mat-form-field>
+  </form>
+</div>
+<div class="actions" mat-dialog-actions>
+  <button class="cancel" mat-button (click)="close()">Cancelar</button>
+  <button class="save" mat-button (click)="save()" [disabled]="!classForm.valid">Guardar</button>
+</div>

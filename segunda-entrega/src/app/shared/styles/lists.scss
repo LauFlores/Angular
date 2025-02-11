@@ -1,0 +1,53 @@
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-icon {
+  color: #cc1122;
+}
+
+.edit-icon {
+  color: #ffcc00;
+}
+
+.view-icon {
+  color: #0099ff;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .controls {
+    span {
+      display: none;
+    }
+  }
+}
+
+section {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.mat-mdc-form-field {
+  overflow: hidden;
+}
+

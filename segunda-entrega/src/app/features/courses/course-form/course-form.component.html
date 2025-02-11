@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>{{ data ? data.name : 'Nuevo Curso' }}</h1>
+<div class="main" mat-dialog-content>
+  <form [formGroup]="courseForm">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name" />
+      @if (courseForm.get('name')?.invalid) {
+        <mat-error>Nombre es requerido</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descripcion</mat-label>
+      <input matInput formControlName="description" />
+      @if (courseForm.get('description')?.invalid) {
+        <mat-error>Descripcion es requerido</mat-error>
+      }
+    </mat-form-field>
+  </form>
+</div>
+<div class="actions" mat-dialog-actions>
+  <button class="cancel" mat-button (click)="close()">Cancelar</button>
+  <button class="save" mat-button (click)="save()" [disabled]="!courseForm.valid">Guardar</button>
+</div>

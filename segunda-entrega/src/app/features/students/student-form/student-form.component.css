@@ -1,0 +1,36 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  display: block;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.cancel {
+  color: #c91212;
+  background-color: rgba(201, 18, 18, 0.1254901961);
+}
+
+.save {
+  color: #007a5a;
+  background-color: rgba(0, 122, 90, 0.1254901961);
+}
+
+div {
+  background-color: #181e1e;
+}
+
+h1 {
+  background-color: #004F4E;
+  color: #00BCD4; /* Por que no funciona? */
+}
+
+/*# sourceMappingURL=student-form.component.css.map */

@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Inscribir en Curso</h1>
+<div mat-dialog-content>
+  <form [formGroup]="enrollmentForm">
+    <mat-form-field>
+      <mat-label>Curso</mat-label>
+      <input
+        type="text"
+        placeholder="Nombre del Curso..."
+        matInput
+        formControlName="courseId"
+        [matAutocomplete]="auto"
+        [required]="true"
+      />
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayCourse">
+        @for (course of filteredCourses | async; track course) {
+          <mat-option [value]="course.id">{{ course.name }}</mat-option>
+        }
+      </mat-autocomplete>
+      @if (enrollmentForm.get('courseId')?.invalid) {
+        <mat-error>Seleccione un Curso</mat-error>
+      }
+    </mat-form-field>
+
+  </form>
+</div>
+
+<div class="actions" mat-dialog-actions>
+  <button class="cancel" mat-button (click)="close()">Cancelar</button>
+  <button class="save" mat-button (click)="save()" [disabled]="enrollmentForm.invalid">Inscribir</button>
+</div>
