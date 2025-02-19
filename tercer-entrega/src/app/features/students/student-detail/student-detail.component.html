@@ -1,0 +1,110 @@
+<section class="student-info-container">
+   @if (isLoading) {
+      <div class="loading-spinner">
+         <mat-spinner diameter="50"></mat-spinner>
+      </div>
+   } @else {
+      @if (student) {
+         <mat-card class="student-card">
+            <mat-card-header>
+               @if (true) {
+                  <img
+                     ngSrc="student.png"
+                     alt="Student {{ student.firstName }} {{ student.lastName }}"
+                     width="100"
+                     height="100">
+               } @else {
+                  <div mat-card-avatar class="student-avatar">
+                     {{ student.firstName.charAt(0) }}{{ student.lastName.charAt(0) }}
+                  </div>
+               }
+               <div>
+                  <mat-card-title>{{ student | fullName }}</mat-card-title>
+                  <mat-card-subtitle>
+                     <mat-chip-listbox>
+                        <mat-chip [color]="student.isActive ? 'accent' : 'warn'" selected>
+                           {{ student.isActive ? 'Activo' : 'Inactivo' }}
+                        </mat-chip>
+                     </mat-chip-listbox>
+                  </mat-card-subtitle>
+               </div>
+            </mat-card-header>
+            <mat-card-content>
+               <div class="student-info">
+                  <div class="info-item">
+                     <mat-icon matListItemIcon>person</mat-icon>
+                     <div>
+                        <strong>Nombre completo</strong>
+                        <p>{{ student.firstName }} {{ student.lastName }}</p>
+                     </div>
+                  </div>
+                  <div class="info-item">
+                     <mat-icon matListItemIcon>email</mat-icon>
+                     <div>
+                        <strong>Email</strong>
+                        <p>{{ student.email }}</p>
+                     </div>
+                  </div>
+                  <div class="info-item">
+                     <mat-icon matListItemIcon>event</mat-icon>
+                     <div>
+                        <strong>Fecha de Registro</strong>
+                        <p>{{ student.createdAt | date: 'medium' }}</p>
+                     </div>
+                  </div>
+                  <div class="info-item">
+                     <mat-icon matListItemIcon>update</mat-icon>
+                     <div>
+                        <strong>Fecha de Actualización</strong>
+                        <p>{{ student.updatedAt | date: 'medium' }}</p>
+                     </div>
+                  </div>
+               </div>
+               <mat-divider></mat-divider>
+               <h3>Cursos Inscritos</h3>
+               @if (enrollments && enrollments.length > 0) {
+                  <div class="courses-grid">
+                     @for (enrollment of enrollments; track enrollment) {
+                        <mat-card class="course-card" [routerLink]="['/dashboard/courses', enrollment.courseId]">
+                           <p>/courses/{{ enrollment.courseId }}</p>
+                           <mat-card-header>
+                              <img mat-card-avatar ngSrc="{{ enrollment.courseImageURL }}" alt="Curso {{ enrollment.courseName }}" width="100" height="100">
+                              <mat-card-title>{{ enrollment.courseName }}</mat-card-title>
+                              <mat-card-subtitle>{{ enrollment.enrollmentDate | date:'mediumDate' }}</mat-card-subtitle>
+                           </mat-card-header>
+                        </mat-card>
+                     }
+                  </div>
+               } @else {
+                  <p>El estudiante no está inscrito en ningún curso.</p>
+               }
+            </mat-card-content>
+            <mat-card-actions align="end">
+               <button mat-raised-button color="primary" (click)="goBack()">
+                  <mat-icon>arrow_back</mat-icon>
+                  Volver al listado
+               </button>
+               <button mat-raised-button color="primary" (click)="openEnrollmentForm()">
+                  <mat-icon>add</mat-icon>
+                  Inscribir
+               </button>
+            </mat-card-actions>
+         </mat-card>
+      } @else {
+         <mat-card class="not-found-card">
+            <mat-card-header>
+               <mat-card-title>Estudiante no encontrado</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+               <p>Lo sentimos, no se pudo encontrar la información del estudiante.</p>
+            </mat-card-content>
+            <mat-card-actions align="end">
+               <button mat-raised-button color="primary" (click)="goBack()">
+                  <mat-icon>arrow_back</mat-icon>
+                  Volver al listado
+               </button>
+            </mat-card-actions>
+         </mat-card>
+      }
+   }
+</section>

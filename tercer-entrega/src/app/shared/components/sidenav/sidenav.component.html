@@ -1,0 +1,27 @@
+<mat-nav-list>
+   @if (isAdmin()){
+      <a mat-list-item
+         [routerLink]="['/dashboard/users']">
+         <mat-icon>person</mat-icon>
+         Usuarios
+      </a>
+   }
+   <a mat-list-item
+      [routerLink]="['/dashboard/students']"
+      routerLinkActive="active-link">
+      <mat-icon>group</mat-icon>
+      Alumnos
+   </a>
+   <a mat-list-item
+      [routerLink]="['/dashboard/courses']"
+      routerLinkActive="active-link">
+      <mat-icon>school</mat-icon>
+      Cursos
+   </a>
+   <a mat-list-item
+      [routerLink]="['/dashboard/classes']"
+      routerLinkActive="active-link">
+      <mat-icon>menu_book</mat-icon>
+      Clases
+   </a>
+</mat-nav-list>

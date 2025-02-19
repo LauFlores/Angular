@@ -1,0 +1,19 @@
+<main>
+  <app-toolbar [drawer]="drawer"></app-toolbar>
+  <!-- --------- Side Nav --------- -->
+  <mat-drawer-container class="example-container">
+
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+
+    <!-- --------- Main Content --------- -->
+    <mat-drawer-content>
+      <div class="main-content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+
+  </mat-drawer-container>
+
+</main>

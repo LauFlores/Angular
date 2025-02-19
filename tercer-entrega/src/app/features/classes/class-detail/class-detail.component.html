@@ -1,0 +1,55 @@
+<section class="class-info-container">
+  @if (isLoading) {
+    <div class="loading-spinner">
+      <mat-spinner diameter="50"></mat-spinner>
+    </div>
+  } @else {
+    <mat-card class="class-card">
+      <mat-card-header>
+        <div mat-card-avatar class="class-avatar">
+          {{ class.title.charAt(0) }}{{ class.title.charAt(6) }}
+        </div>
+        <div>
+          <mat-card-title>{{ class.title }}</mat-card-title>
+          <mat-card-subtitle>
+            <mat-chip-listbox>
+              <mat-chip [color]="class.isActive ? 'green' : 'red'">
+                {{ class.isActive ? 'Activo' : 'Inactivo' }}
+              </mat-chip>
+            </mat-chip-listbox>
+          </mat-card-subtitle>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListItemIcon>person</mat-icon>
+            <span matListItemTitle>Nombre</span>
+            <span matListItemLine>{{ class.title }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListItemIcon>event</mat-icon>
+            <span matListItemTitle>Descripción</span>
+            <span matListItemLine>{{ class.description }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListItemIcon>event</mat-icon>
+            <span matListItemTitle>Curso</span>
+            <span matListItemLine>{{ class.courseName }}</span>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+          Volver al listado
+        </button>
+        <button mat-raised-button color="primary" (click)="goToCourse()">
+          <mat-icon>arrow_forward</mat-icon>
+          Ver el Curso
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  }
+
+</section>
