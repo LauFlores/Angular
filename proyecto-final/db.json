@@ -1,0 +1,252 @@
+{
+  "users": [
+    {
+      "id": "ec97",
+      "firstName": "Laura",
+      "lastName": "Flores",
+      "email": "admin@mail.com",
+      "password": "1234",
+      "direccion": "Beruti 3701 - CABA",
+      "tel": "1140457145",
+      "token": "sdjkfhdsjf",
+      "isActive": true,
+      "role": "ADMIN",
+      "createdAt": "2025-02-01T18:31:50.826Z",
+      "updatedAt": "2025-03-05T01:10:49.964Z"
+    },
+    {
+      "id": "d9ad",
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "email": "admin@mail.com",
+      "password": "1234",
+      "direccion": "Beruti 3701 - CABA",
+      "tel": "1140457145",
+      "token": "502503cef0ed2",
+      "isActive": true,
+      "role": "ADMIN",
+      "createdAt": "2025-02-05T02:01:40.663Z",
+      "updatedAt": "2025-02-05T02:01:40.663Z"
+    },
+    {
+      "id": "ee90",
+      "firstName": "Sergio",
+      "lastName": "Gimenez",
+      "email": "user@mail.com",
+      "password": "1234",
+      "direccion": "Beruti 3701 - CABA",
+      "tel": "1140457147",
+      "token": "3bc40bc1cabc4",
+      "isActive": true,
+      "role": "USER",
+      "createdAt": "2025-02-05T02:05:09.482Z",
+      "updatedAt": "2025-03-04T21:32:26.959Z"
+    }
+  ],
+  "students": [
+    {
+      "id": "5c60",
+      "firstName": "Martín",
+      "lastName": "González",
+      "email": "martin.gonzalez@gmail.com",
+      "isActive": false,
+      "createdAt": "2025-01-30T01:00:00.000Z",
+      "updatedAt": "2025-02-05T02:04:29.452Z"
+    },
+    {
+      "id": "e001",
+      "firstName": "Sofía",
+      "lastName": "Rodríguez",
+      "email": "sofia.rodriguez@gmail.com",
+      "isActive": true,
+      "createdAt": "2025-01-30T01:00:00.000Z",
+      "updatedAt": "2025-01-31T16:33:36.714Z"
+    },
+    {
+      "id": "f812",
+      "firstName": "Camila",
+      "lastName": "Pérez",
+      "email": "camila.perez@gmail.com",
+      "isActive": true,
+      "createdAt": "2025-01-30T01:00:00.000Z",
+      "updatedAt": "2025-01-30T01:00:00.000Z"
+    },
+    {
+      "id": "d8fc",
+      "firstName": "Lucas",
+      "lastName": "Fernández",
+      "email": "lucas.fernandez@gmail.com",
+      "isActive": true,
+      "createdAt": "2025-01-30T01:00:00.000Z",
+      "updatedAt": "2025-01-30T01:00:00.000Z"
+    },
+    {
+      "id": "b3be",
+      "firstName": "Valentina",
+      "lastName": "López",
+      "email": "valentina.lopez@gmail.com",
+      "isActive": true,
+      "createdAt": "2025-01-30T01:00:00.000Z",
+      "updatedAt": "2025-01-30T01:00:00.000Z"
+    },
+    {
+      "id": "8629",
+      "firstName": "Joaquín",
+      "lastName": "Martínez",
+      "email": "joaquin.martinez@gmail.com",
+      "isActive": true,
+      "createdAt": "2025-01-30T01:00:00.000Z",
+      "updatedAt": "2025-01-30T01:00:00.000Z"
+    },
+    {
+      "id": "6bb0",
+      "firstName": "Lucía",
+      "lastName": "Sánchez",
+      "email": "lucia.sanchez@gmail.com",
+      "isActive": true,
+      "createdAt": "2025-01-30T01:00:00.000Z",
+      "updatedAt": "2025-01-30T01:00:00.000Z"
+    },
+    {
+      "id": "87b3",
+      "firstName": "Luis",
+      "lastName": "Salinas",
+      "email": "luissalinas@gmail.com",
+      "isActive": false,
+      "createdAt": "2025-02-02T13:18:52.926Z",
+      "updatedAt": "2025-02-02T13:19:43.207Z"
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "ac09",
+      "courseId": "96b5",
+      "studentId": "5c60",
+      "enrolledByUserId": "ee90",
+      "isActive": true,
+      "enrollmentDate": "2025-01-31T18:04:15.589Z",
+      "updatedAt": "2025-01-31T18:04:15.589Z"
+    },
+    {
+      "id": "680a",
+      "courseId": "ace4",
+      "studentId": "5c60",
+      "enrolledByUserId": "ee90",
+      "isActive": true,
+      "enrollmentDate": "2025-01-31T18:12:22.975Z",
+      "updatedAt": "2025-01-31T18:12:22.975Z"
+    },
+    {
+      "id": "c242",
+      "studentId": "8629",
+      "courseId": "03b3",
+      "enrolledByUserId": "ee90",
+      "isActive": true,
+      "enrollmentDate": "2025-03-05T03:20:35.550Z",
+      "updatedAt": "2025-03-05T03:20:35.550Z"
+    }
+  ],
+  "courses": [
+    {
+      "id": "96b5",
+      "name": "Angular",
+      "description": "Desarrollo de aplicaciones Web con Angular.",
+      "imageURL": "angular.png",
+      "hours": 40,
+      "classes": 10,
+      "teacher": "Juan Pérez",
+      "isActive": true,
+      "createdAt": "2025-01-30T23:49:13.408Z",
+      "updatedAt": "2025-01-31T17:17:00.885Z"
+    },
+    {
+      "id": "03b3",
+      "name": "React",
+      "description": "Desarrollo de interfaces de usuario con React.",
+      "imageURL": "react.png",
+      "hours": 40,
+      "classes": 10,
+      "teacher": "Juan Pérez",
+      "isActive": true,
+      "createdAt": "2025-01-30T23:53:08.936Z",
+      "updatedAt": "2025-01-30T23:53:08.936Z"
+    },
+    {
+      "id": "ace4",
+      "name": "JavaScript",
+      "description": "Fundamentos de JavaScript.",
+      "imageURL": "js.png",
+      "hours": 40,
+      "classes": 10,
+      "teacher": "Juan Pérez",
+      "isActive": true,
+      "createdAt": "2025-01-30T23:57:43.045Z",
+      "updatedAt": "2025-01-30T23:57:43.045Z"
+    },
+    {
+      "id": "688a",
+      "name": "Spring",
+      "description": "Desarrollo de aplicaciones con Spring Framework.",
+      "imageURL": "spring.png",
+      "hours": 40,
+      "classes": 10,
+      "teacher": "Juan Pérez",
+      "isActive": true,
+      "createdAt": "2025-01-30T23:58:05.841Z",
+      "updatedAt": "2025-01-30T23:58:05.841Z"
+    },
+    {
+      "id": "43df",
+      "name": "Laravel",
+      "description": "Desarrollo de aplicaciones monolíticas con Laravel.",
+      "imageURL": "laravel.png",
+      "hours": 40,
+      "classes": 10,
+      "teacher": "Juan Pérez",
+      "isActive": true,
+      "createdAt": "2025-01-30T23:58:29.382Z",
+      "updatedAt": "2025-01-31T17:27:00.251Z"
+    },
+    {
+      "id": "6acb",
+      "name": "TypeScript",
+      "description": "Curso inicial de TypeScript.",
+      "imageURL": "typescript.png",
+      "hours": 40,
+      "classes": 10,
+      "teacher": "Juan Pérez",
+      "isActive": true,
+      "createdAt": "2025-01-31T00:54:19.002Z",
+      "updatedAt": "2025-01-31T00:54:19.002Z"
+    }
+  ],
+  "classes": [
+    {
+      "id": "3nx09idgdp5",
+      "title": "Clase 1: Introducción a Angular",
+      "description": "Angular CLI, instalación y configuración de la aplicación. EDIT",
+      "courseId": "96b5",
+      "isActive": true,
+      "createdAt": "2025-01-31T01:20:44.299Z",
+      "updatedAt": "2025-01-31T01:20:44.299Z"
+    },
+    {
+      "id": "dwmtnnteksb",
+      "title": "Clase 2: Directivas",
+      "description": "Aprende a usar las directivas de Angular.",
+      "courseId": "96b5",
+      "isActive": true,
+      "createdAt": "2025-01-31T02:10:42.514Z",
+      "updatedAt": "2025-01-31T02:10:42.514Z"
+    },
+    {
+      "id": "47bf14k1h49",
+      "title": "Python",
+      "description": "Aprende Python para desarrollo web",
+      "courseId": "96b5",
+      "isActive": false,
+      "createdAt": "2025-01-31T02:12:53.650Z",
+      "updatedAt": "2025-01-31T02:12:53.650Z"
+    }
+  ]
+}

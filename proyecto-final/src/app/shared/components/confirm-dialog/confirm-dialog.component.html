@@ -1,0 +1,8 @@
+<h2 class="titulo" mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content style="white-space: pre-line;">
+  {{ data.message }}
+</mat-dialog-content>
+<mat-dialog-actions class="actions">
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button class="confirm" mat-button (click)="onConfirm()">Aceptar</button>
+</mat-dialog-actions>

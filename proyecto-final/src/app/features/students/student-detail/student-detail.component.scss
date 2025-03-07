@@ -1,0 +1,11 @@
+.delete-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #ff4444; /* Color rojo para el ícono */
+ }
+ 
+ .delete-icon:hover {
+    color: #cc0000; /* Color rojo más oscuro al hacer hover */
+ }

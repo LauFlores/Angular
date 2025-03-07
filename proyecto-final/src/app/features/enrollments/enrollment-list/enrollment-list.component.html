@@ -1,0 +1,94 @@
+<section>
+    <h1>Lista de Inscripciones</h1>
+  
+    <!-- Spinner de carga -->
+    <div *ngIf="isLoading">
+      <mat-spinner class="spinner"></mat-spinner>
+    </div>
+
+
+    <div *ngIf="!isLoading">
+      <!-- <div class="controls"> -->
+        <!-- Botón para agregar inscripción (opcional, según requerimientos) -->
+        <!--
+        <button mat-raised-button class="demo-button" (click)="openDialog(null)">
+           Agregar Inscripción
+        </button>
+        -->
+      <!-- </div> -->
+  
+      <!-- Filtro de búsqueda -->
+      <mat-form-field>
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="" #input />
+      </mat-form-field>
+  
+      <!-- Tabla de Inscripciones -->
+      <!-- <div class="mat-elevation-z8"> -->
+        <table mat-table [dataSource]="dataSource" matSort>
+    
+            <!-- Columna ID del Alumno -->
+            <ng-container matColumnDef="studentId">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef> ID Alumno </th>
+              <td mat-cell *matCellDef="let row"> {{ row.studentId }} </td>
+            </ng-container>
+    
+            <!-- Columna ID del Curso -->
+            <ng-container matColumnDef="courseId">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef> ID Curso </th>
+              <td mat-cell *matCellDef="let row"> {{ row.courseId }} </td>
+            </ng-container>
+    
+            <!-- Columna Fecha de Inscripción -->
+            <ng-container matColumnDef="enrollmentDate">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef> Fecha Inscripción </th>
+              <td mat-cell *matCellDef="let row"> {{ row.enrollmentDate | date }} </td>
+            </ng-container>
+    
+            <!-- Columna Usuario Inscriptor -->
+            <ng-container matColumnDef="enrolledBy">
+              <th mat-header-cell mat-sort-header *matHeaderCellDef> ID Usuario Inscriptor </th>
+              <td mat-cell *matCellDef="let row"> {{ row.enrolledByUserId }} </td>
+            </ng-container>
+    
+            <!-- Columna de Acciones -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Acciones </th>
+              <td mat-cell *matCellDef="let row">
+                <div class="actions">
+                  <!-- Botón para ver detalle -->
+                  <!-- <button mat-icon-button aria-label="Ver Detalle" (click)="openDetail(row)">
+                    <mat-icon>visibility</mat-icon>
+                  </button> -->
+                  <!-- Botón para editar inscripción -->
+                  <!-- <button mat-icon-button aria-label="Modificar inscripción" (click)="openDialog(row)">
+                    <mat-icon>edit</mat-icon>
+                  </button> -->
+                  <!-- Botón para eliminar inscripción -->
+                  <!-- <button mat-icon-button aria-label="Eliminar inscripción" (click)="deleteEnrollment(row.id)">
+                    <mat-icon>delete</mat-icon>
+                  </button>-->
+                </div>
+              </td>
+            </ng-container> 
+    
+            <!-- Fila de cabecera -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <!-- Fila de datos -->
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <!-- Fila cuando no hay datos -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="5">No hay datos que coincidan con el filtro "{{ input.value }}"</td>
+            </tr>
+        </table>
+  
+        <!-- Paginador -->
+        <mat-paginator
+           [pageSizeOptions]="[10, 25, 100]"
+           showFirstLastButtons
+           aria-label="Select page of enrollments">
+        </mat-paginator>
+      </div>
+    <!-- </div> -->
+  </section>
+  

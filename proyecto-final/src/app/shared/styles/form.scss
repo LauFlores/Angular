@@ -1,0 +1,29 @@
+.register-container,
+.login-container {
+   max-width: 400px;
+   margin: 2rem auto;
+   padding: 2rem;
+}
+mat-form-field {
+   width: 100%;
+   margin-bottom: 1rem;
+}
+.submit-button {
+   width: 100%;
+   margin-top: 1rem;
+}
+mat-card-header {
+   justify-content: center;
+   margin-bottom: 1rem;
+}
+
+.actions {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 1rem;
+}
+
+mat-card-title{
+   color: #ffffff;
+}
